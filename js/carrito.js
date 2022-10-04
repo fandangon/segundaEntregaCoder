@@ -634,9 +634,7 @@ function mostrarCarrito() {
         divProductos.appendChild(btnBorrarCarro);
         botonBorrarCarro.appendChild(divProductos);
     }
-
 }
-
 const btnCarro = document.createElement("button");
 btnCarro.classList.add("btn-carro");
 btnCarro.textContent = "Comprar Productos";
@@ -662,7 +660,6 @@ btnCarro.onclick = () => {
             }
         });
 };
-
 
 const btnBorrarCarro = document.createElement("button");
 btnBorrarCarro.classList.add("btn-borrar");
