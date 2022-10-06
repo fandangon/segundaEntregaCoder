@@ -645,6 +645,7 @@ btnCarro.onclick = () => {
             buttons: ["Efectivo / Débito", "Crédito"]
         })
         .then((contado) => {
+            //Operador Ternario
             contado ? (suma = suma * 1.21)(swal(`La suma de los productos del carrito pagando en Crédito es $${suma.toFixed(2)}`,{icon: "success"})) : (swal(`La suma de los productos del carrito pagando en Efectivo / Debito es $${suma.toFixed(2)}`, {icon: "success",}))
         })
 
