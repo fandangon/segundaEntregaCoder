@@ -634,38 +634,26 @@ function mostrarCarrito() {
         divProductos.appendChild(btnBorrarCarro);
         botonBorrarCarro.appendChild(divProductos);
     }
+
 }
+
 const btnCarro = document.createElement("button");
 btnCarro.classList.add("btn-carro");
 btnCarro.textContent = "Comprar Productos";
 btnCarro.onclick = () => {
-    swal({
-            title: "Forma de Pago",
-
-            buttons: ["Efectivo / Débito", "Crédito"],
-
+    swal({  title: "Forma de Pago",
+            buttons: ["Efectivo / Débito", "Crédito"]
         })
         .then((contado) => {
-            if (contado) {
-                suma = suma * 1.21;
-                swal(`La suma de los productos del carrito pagando en Crédito es $${suma.toFixed(2)}`, {
-                    icon: "success",
-
-                });
-
-            } else {
-                swal(`La suma de los productos del carrito pagando en Efectivo / Debito es $${suma.toFixed(2)}`, {
-                    icon: "success",
-                });
-            }
-        });
-};
+            contado ? (suma = suma * 1.21)(swal(`La suma de los productos del carrito pagando en Crédito es $${suma.toFixed(2)}`,{icon: "success"})) : (swal(`La suma de los productos del carrito pagando en Efectivo / Debito es $${suma.toFixed(2)}`, {icon: "success",}))
+        })
 
 const btnBorrarCarro = document.createElement("button");
 btnBorrarCarro.classList.add("btn-borrar");
 btnBorrarCarro.textContent = "Borrar Productos";
 btnBorrarCarro.onclick = () => {
+    
     localStorage.clear();
     location.reload();
-
-};
+    }
+}
